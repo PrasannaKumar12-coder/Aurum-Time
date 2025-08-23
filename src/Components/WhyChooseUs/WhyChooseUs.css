@@ -1,0 +1,244 @@
+/* WhyChooseUs.css */
+.why-choose-us {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #001818, #002525);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-choose-us::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1516724562728-afc824a36e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80') no-repeat center center/cover;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-family: "Playfair Display", serif;
+  background: linear-gradient(90deg, #d3ab4d, #cd9746, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #d3ab4d, #cd9746, #feb47b);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 4rem;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.feature-card {
+  background: rgba(0, 37, 37, 0.7 );
+  border: 1px solid rgba(211, 171, 77, 0.2);
+  border-radius: 10px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(45deg, rgba(211, 171, 77, 0.1), rgba(205, 151, 70, 0.1));
+  transition: height 0.4s ease;
+  z-index: -1;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(211, 171, 77, 0.4);
+}
+
+.feature-card:hover::before {
+  height: 100%;
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #002525, #003434);
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.feature-card:hover .feature-icon {
+  background: linear-gradient(45deg, #d3ab4d, #cd9746);
+  transform: scale(1.1);
+}
+
+.feature-icon i {
+  font-size: 2rem;
+  color: #d3ab4d;
+  transition: all 0.4s ease;
+}
+
+.feature-card:hover .feature-icon i {
+  color: #002525;
+  transform: rotateY(360deg);
+}
+
+.feature-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  position: relative;
+}
+
+.feature-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #d3ab4d, #cd9746);
+  transition: width 0.4s ease;
+}
+
+.feature-card:hover .feature-title::after {
+  width: 80px;
+}
+
+.feature-description {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  transition: all 0.4s ease;
+}
+
+.feature-card:hover .feature-description {
+  color: #fff;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 968px) {
+  .why-choose-us {
+    padding: 4rem 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .features-grid {
+    gap: 2rem;
+  }
+  
+  .feature-card {
+    padding: 2rem 1.2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr; 
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .feature-card {
+    padding: 1.8rem 1rem;
+  }
+  
+  .feature-icon {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.2rem;
+  }
+  
+  .feature-icon i {
+    font-size: 1.7rem;
+  }
+  
+  .feature-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .why-choose-us {
+    padding: 3rem 1rem;
+    min-height: 80vh;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .feature-card {
+    padding: 1.5rem;
+  }
+}

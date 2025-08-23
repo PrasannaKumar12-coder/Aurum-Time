@@ -1,0 +1,328 @@
+/* BrandsSection.css - Updated for better logo visibility */
+.brands-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #001818, #002525);
+  position: relative;
+  overflow: hidden;
+}
+
+.brands-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1516724562728-afc824a36e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80') no-repeat center center/cover;
+  opacity: 0.08;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-family: "Playfair Display", serif;
+  background: linear-gradient(90deg, #d3ab4d, #cd9746, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #d3ab4d, #cd9746, #feb47b);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 4rem;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.8rem;
+  margin-top: 3rem;
+}
+
+.brand-card {
+  background: rgba(0, 37, 37, 0.7);
+  border: 1px solid rgba(211, 171, 77, 0.2);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: linear-gradient(45deg, rgba(211, 171, 77, 0.1), rgba(205, 151, 70, 0.1));
+  transition: height 0.4s ease;
+  z-index: -1;
+}
+
+.brand-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  border-color: rgba(211, 171, 77, 0.5);
+}
+
+.brand-card:hover::before {
+  height: 100%;
+}
+
+.brand-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.brand-logo {
+  height: 80px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  /* Added white background for transparent logos */
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.brand-logo img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  /* Removed grayscale filter for better visibility */
+  transition: all 0.4s ease;
+}
+
+.brand-card:hover .brand-logo img {
+  transform: scale(1.1);
+}
+
+/* Remove brand name to show only logos */
+
+
+.brand-hover-effect {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(211, 171, 77, 0.1), transparent);
+  transition: all 0.6s ease;
+  z-index: 1;
+}
+
+.brand-card:hover .brand-hover-effect {
+  left: 100%;
+}
+
+.show-more-container, .show-less-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.show-more-btn, .show-less-btn {
+  background: linear-gradient(90deg, #d3ab4d, #cd9746);
+  color: #002525;
+  border: none;
+  padding: 14px 35px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.show-more-btn::before, .show-less-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+
+.show-more-btn:hover, .show-less-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.show-more-btn:hover::before, .show-less-btn:hover::before {
+  left: 100%;
+}
+
+/* Tooltip for brand names */
+.brand-card {
+  position: relative;
+}
+
+.brand-card::after {
+  content: attr(data-brand);
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #d3ab4d;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-family: "Playfair Display", serif;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.brand-card:hover::after {
+  opacity: 1;
+  visibility: visible;
+  bottom: -35px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1024px) {
+  .brands-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .brand-card {
+    padding: 1.8rem 1.2rem;
+    height: 150px;
+  }
+  
+  .brand-logo {
+    height: 55px;
+    padding: 8px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .brands-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .brands-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .brand-card {
+    padding: 1.5rem 1rem;
+    height: 140px;
+  }
+  
+  .brand-logo {
+    height: 50px;
+    margin-bottom: 0.8rem;
+    padding: 6px;
+  }
+  
+  .show-more-btn, .show-less-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .brands-section {
+    padding: 3rem 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .brands-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1rem;
+  }
+  
+  .brand-card {
+    padding: 1.2rem 0.8rem;
+    height: 130px;
+  }
+  
+  .brand-logo {
+    height: 45px;
+    margin-bottom: 0.6rem;
+    padding: 5px;
+  }
+  
+  .show-more-btn, .show-less-btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+  
+  .brand-card::after {
+    font-size: 0.7rem;
+    bottom: -35px;
+  }
+  
+  .brand-card:hover::after {
+    bottom: -30px;
+  }
+}

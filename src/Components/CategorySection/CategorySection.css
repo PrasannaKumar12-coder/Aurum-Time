@@ -1,0 +1,299 @@
+/* CategorySection.css */
+.category-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #001818, #002525);
+  position: relative;
+  overflow: hidden;
+}
+
+.category-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1516724562728-afc824a36e84?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1771&q=80') no-repeat center center/cover;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-family: "Playfair Display", serif;
+  background: linear-gradient(90deg, #d3ab4d, #cd9746, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, #d3ab4d, #cd9746, #feb47b);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
+  margin-bottom: 4rem;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.category-card {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+  height: 500px;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.category-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.category-card:hover .category-image img {
+  transform: scale(1.05);
+}
+
+.category-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 37, 37, 0.2), rgba(0, 52, 52, 0.7));
+  transition: all 0.4s ease;
+}
+
+.category-card:hover .category-overlay {
+  background: linear-gradient(to bottom, rgba(0, 37, 37, 0.1), rgba(0, 52, 52, 0.8));
+}
+
+.category-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.5rem;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+
+.category-card:hover .category-content {
+  transform: translateY(-10px);
+}
+
+.category-content h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-family: "Playfair Display", serif;
+  background: linear-gradient(90deg, #d3ab4d, #cd9746, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.category-content p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  color: #e0e0e0;
+  max-width: 80%;
+}
+
+.explore-btn {
+  background: linear-gradient(90deg, #d3ab4d, #cd9746);
+  color: #002525;
+  border: none;
+  padding: 14px 35px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.explore-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+
+.explore-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.explore-btn:hover::before {
+  left: 100%;
+}
+
+/* Men's category specific styles */
+.men-category .category-content {
+  text-align: left;
+}
+
+/* Women's category specific styles */
+.women-category .category-content {
+  text-align: right;
+}
+
+.women-category .category-content p {
+  margin-left: auto;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 968px) {
+  .category-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .categories-grid {
+    gap: 2rem;
+  }
+  
+  .category-content {
+    padding: 2rem;
+  }
+  
+  .category-content h3 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .category-card {
+    height: 400px;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .category-content {
+    padding: 1.8rem;
+  }
+  
+  .category-content h3 {
+    font-size: 1.8rem;
+  }
+  
+  .category-content p {
+    font-size: 1rem;
+  }
+  
+  .explore-btn {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+  
+  /* Center content on mobile */
+  .men-category .category-content,
+  .women-category .category-content {
+    text-align: center;
+  }
+  
+  .women-category .category-content p {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .category-section {
+    padding: 3rem 1rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .category-content {
+    padding: 1.5rem;
+  }
+  
+  .category-content h3 {
+    font-size: 1.6rem;
+  }
+  
+  .category-content p {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+  
+  .explore-btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+}
