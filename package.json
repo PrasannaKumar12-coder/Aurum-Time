@@ -1,15 +1,17 @@
 {
   "homepage": "https://github.com/PrasannaKumar12-coder/Aurum-time-homePage",
   "name": "react",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-
-  
   "scripts": {
     "start": "react-scripts start",
     "dev": "vite",
+    "eject": "react-scripts eject",
     "build": "react-scripts build",
+    "test": "react-scripts test",
     "lint": "eslint .",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
