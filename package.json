@@ -12,6 +12,13 @@
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
+
+  {
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
+
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
     "react": "^19.1.1",
