@@ -1,23 +1,16 @@
 {
   "name": "aurum-time",
-  "version": "",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "predeploy":"npm run build",
+    "predeploy": "npm run build",
     "dev": "vite",
     "build": "vite build",
-    "lint":"eslint src --ext js,jsx --report-unused-disable-directives --max-warning 0",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warning 0",
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
-
-  {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ]
-}
-
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
     "react": "^19.1.1",
