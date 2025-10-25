@@ -1,9 +1,8 @@
 {
   "name": "aurum-time",
-  "version": "0.1.0",
+  "version": "",
   "private": true,
   "type": "module",
-  "homepage": "https://PrasannaKumar12-coder.github.io/Aurum-Time",
   "scripts": {
     "predeploy":"npm run build",
     "dev": "vite",
